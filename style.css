@@ -1,0 +1,39 @@
+/***********************************  VARIABLER  ***********************************/
+
+html {
+  --font: "Inter", sans-serif;
+  --radius: 10px;
+  --gap: 1rem;
+
+  --dark: #000000;
+  --light: #ffffff;
+  --grey_1: #f1f1f1;
+}
+
+/***********************************  RESET + BASE  ***********************************/
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+.max {
+  margin: 0 10%;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+h1 {
+  font-family: Inter;
+  font-size: 3rem;
+  font-weight: 600;
+  color: var(--dark);
+
+  margin: 0;
+}
