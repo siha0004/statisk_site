@@ -3,11 +3,18 @@
 html {
   --font: "Inter", sans-serif;
   --radius: 10px;
+  --radius_2: 5px;
   --gap: 1rem;
 
   --dark: #000000;
   --light: #ffffff;
   --grey_1: #f1f1f1;
+  --grey_2: #808080;
+  --grey_3: #dfdfdf;
+  --grey_4: #e6e6e6;
+  --sold: #dfdfdf80;
+  --sale: #ff3d00;
+  --green: #78c33c;
 }
 
 /***********************************  RESET + BASE  ***********************************/
@@ -16,11 +23,20 @@ html {
 }
 
 body {
-  margin: 0;
+  margin: 0 auto;
+  max-width: 1500px;
 }
 
 .max {
   margin: 0 10%;
+}
+
+.luft {
+  margin: 0 0 2rem;
+}
+
+.relative {
+  position: relative;
 }
 
 img {
@@ -29,11 +45,235 @@ img {
   display: block;
 }
 
+/***********************************  TEXT  ***********************************/
+
 h1 {
-  font-family: Inter;
-  font-size: 3rem;
+  font-family: var(--font);
+  font-size: 2rem;
   font-weight: 600;
   color: var(--dark);
 
   margin: 0;
 }
+h2 {
+  font-family: var(--font);
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--dark);
+
+  margin: 0;
+}
+
+p {
+  font-family: var(--font);
+  font-size: 0.9rem;
+  line-height: 125%;
+  color: var(--dark);
+
+  margin: 0;
+}
+
+/***********************************  LINKS  ***********************************/
+
+a {
+  font-family: var(--font);
+  text-decoration: none;
+  color: var(--dark);
+}
+
+a:visited {
+  text-decoration: none;
+  color: var(--dark);
+}
+
+a:hover {
+  color: var(--grey_2);
+}
+
+a.bc_item {
+  font-family: var(--font);
+  font-size: 0.8rem;
+  font-weight: 600;
+
+  color: var(--dark);
+  text-transform: uppercase;
+  display: inline;
+}
+
+a.bc_item:hover {
+  color: #ff3d00;
+}
+
+a.buy {
+  font-weight: bold;
+
+  background-color: var(--green);
+  border-radius: var(--radius);
+  display: block;
+  width: auto;
+  padding: 15px 10px;
+  text-align: center;
+}
+
+/***********************************  SELECT  ***********************************/
+select {
+  border: none;
+  border-radius: var(--radius);
+  background-color: var(--grey_4);
+  padding: 10px 10px;
+  font-size: 1rem;
+  width: 50%;
+}
+
+/***********************************  FLEX  ***********************************/
+
+.flex_row {
+  display: flex;
+  flex-direction: row;
+  gap: var(--gap);
+  align-items: center;
+}
+
+.flex_col {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap);
+}
+
+/***********************************  BREADCRUMBS  ***********************************/
+
+.bc {
+  padding: 3rem 0 1.5rem;
+}
+/***********************************  PRODUCT  ***********************************/
+
+.product {
+  gap: var(--gap);
+}
+.product img {
+  border-radius: var(--radius);
+}
+
+/***********************************  CARD  ***********************************/
+
+.card {
+  background-color: var(--grey_1);
+  border-radius: var(--radius);
+  padding: 15px;
+  position: relative;
+}
+
+.card img {
+  border-radius: var(--radius);
+}
+
+.card .p_name {
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+
+.card .p_brand {
+  color: var(--grey_2);
+}
+
+.card .price {
+  font-size: 1.4rem;
+}
+
+.flex_col .f_txt {
+  gap: 0.5rem;
+}
+
+.p_sale {
+  color: var(--sale);
+}
+
+.price_old {
+  text-decoration: line-through;
+}
+
+.flag {
+  position: absolute;
+  border-radius: var(--radius_2) 0 0 var(--radius_2);
+  z-index: 10;
+
+  text-transform: uppercase;
+  font-weight: 700;
+
+  padding: 10px 25px 7px 10px;
+  top: 10%;
+  right: 0;
+}
+
+.sale p {
+  color: var(--light);
+}
+
+.sale {
+  background-color: var(--sale);
+  color: var(--light);
+}
+.sold {
+  background-color: var(--grey_3);
+}
+img.sold {
+  filter: grayscale(50%);
+}
+
+.grid_pl {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap);
+}
+
+@media (min-width: 600px) {
+  .grid_pl {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .grid_1-1 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5%;
+  }
+
+  .product {
+    gap: 4rem;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+}
+@media (min-width: 1000px) {
+  .grid_pl {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .grid_1-1 {
+    gap: 10%;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  p {
+    font-size: 1rem;
+  }
+  .p_sale {
+    font-size: 1.25rem;
+  }
+}
+/* @media (min-width: 1400px) {
+  .grid_pl {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  h1 {
+    font-size: 3rem;
+  }
+} */
