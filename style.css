@@ -2,9 +2,12 @@
 
 html {
   --font: "Inter", sans-serif;
-  --radius: 10px;
-  --radius_2: 5px;
-  --gap: 1rem;
+  --radius_small: 5px;
+  --radius_medium: 10px;
+  --radius_large: 15px;
+  --gap_small: 0.5rem;
+  --gap_medium: 1rem;
+  --gap_large: 1.5rem;
 
   --dark: #000000;
   --light: #ffffff;
@@ -21,6 +24,8 @@ html {
 /***********************************  RESET + BASE  ***********************************/
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
@@ -28,20 +33,8 @@ body {
   max-width: 1500px;
 }
 
-.max {
-  margin: 0 10%;
-}
-
-.luft {
-  margin: 0 0 2rem;
-}
-
-.relative {
-  position: relative;
-}
-
 img {
-  width: 100%;
+  max-width: 100%;
   height: auto;
   display: block;
 }
@@ -53,16 +46,12 @@ h1 {
   font-size: 2rem;
   font-weight: 600;
   color: var(--dark);
-
-  margin: 0;
 }
 h2 {
   font-family: var(--font);
   font-size: 1.25rem;
   font-weight: 600;
   color: var(--dark);
-
-  margin: 0;
 }
 
 p {
@@ -70,8 +59,6 @@ p {
   font-size: 0.9rem;
   line-height: 125%;
   color: var(--dark);
-
-  margin: 0;
 }
 
 /***********************************  LINKS  ***********************************/
@@ -88,28 +75,14 @@ a:visited {
 }
 
 a:hover {
-  color: var(--grey_2);
-}
-
-a.bc_item {
-  font-family: var(--font);
-  font-size: 0.8rem;
-  font-weight: 600;
-
-  color: var(--dark);
-  text-transform: uppercase;
-  display: inline;
-}
-
-a.bc_item:hover {
-  color: #ff3d00;
+  color: var(--sale);
 }
 
 a.buy {
   font-weight: bold;
 
   background-color: var(--green);
-  border-radius: var(--radius);
+  border-radius: var(--radius_medium);
   display: block;
   width: auto;
   padding: 15px 10px;
@@ -117,9 +90,18 @@ a.buy {
 }
 
 /***********************************  SELECT  ***********************************/
+.max {
+  margin: 0 10%;
+}
+
+.luft {
+  margin: 0 0 2rem;
+}
+
+/***********************************  SELECT  ***********************************/
 select {
   border: none;
-  border-radius: var(--radius);
+  border-radius: var(--radius_medium);
   background-color: var(--grey_4);
   padding: 10px 10px;
   font-size: 1rem;
@@ -131,26 +113,35 @@ select {
 .flex_row {
   display: flex;
   flex-direction: row;
-  gap: var(--gap);
+  gap: var(--gap_medium);
   align-items: center;
 }
 
 .flex_col {
   display: flex;
   flex-direction: column;
-  gap: var(--gap);
+  gap: var(--gap_medium);
 }
 
 /***********************************  BREADCRUMBS  ***********************************/
 
-.bc {
-  padding: 3rem 0 1.5rem;
+.breadcrumbs {
+  display: flex;
+  gap: var(--gap_medium);
+  padding: 3rem 0 0.5rem;
+  list-style: none;
 }
+
+.breadcrumbs li::after {
+  content: "/";
+  padding-left: 1rem;
+}
+
 /***********************************  CATEGORY  ***********************************/
 
 .category {
   background: linear-gradient(170deg, rgba(217, 35, 35, 0.75) 0%, rgba(255, 153, 0, 0.75) 80%);
-  border-radius: var(--radius);
+  border-radius: var(--radius_medium);
 }
 
 .category p {
@@ -161,56 +152,60 @@ select {
   margin: 30px auto;
 }
 
-/***********************************  PRODUCT  ***********************************/
-
-.product {
-  gap: var(--gap);
-}
-.product img {
-  border-radius: var(--radius);
+/***********************************  PRODUCTS  ***********************************/
+.products_container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(275px, 1fr));
+  gap: var(--gap_medium);
 }
 
-/***********************************  CARD  ***********************************/
-
-.card {
+.product_card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap_medium);
   background-color: var(--grey_1);
-  border-radius: var(--radius);
+  border-radius: var(--radius_large);
   padding: 15px;
   position: relative;
 }
 
-.card img {
-  border-radius: var(--radius);
+.product_image {
+  border-radius: var(--radius_medium);
 }
 
-.card .p_name {
+.product_text {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap_small);
+}
+
+.product_name {
   font-weight: 600;
-  font-size: 1.2rem;
-}
-
-.card .p_brand {
-  color: var(--grey_2);
-}
-
-.card .price {
   font-size: 1.4rem;
 }
 
-.flex_col .f_txt {
-  gap: 0.5rem;
+.product_brand {
+  color: var(--grey_2);
+  font-weight: 400;
+  font-size: 1rem;
 }
 
-.p_sale {
-  color: var(--sale);
+.product_price,
+.product_price_kr {
+  font-size: 1.2rem;
 }
 
-.price_old {
+.product_price_old {
   text-decoration: line-through;
 }
 
-.flag {
+.product_price_sale {
+  color: var(--sale);
+}
+
+.product_flag {
   position: absolute;
-  border-radius: var(--radius_2) 0 0 var(--radius_2);
+  border-radius: var(--radius_small) 0 0 var(--radius_small);
   z-index: 10;
 
   text-transform: uppercase;
@@ -221,10 +216,6 @@ select {
   right: 0;
 }
 
-.sale p {
-  color: var(--light);
-}
-
 .sale {
   background-color: var(--sale);
   color: var(--light);
@@ -232,65 +223,49 @@ select {
 .sold {
   background-color: var(--grey_3);
 }
-img.sold {
-  filter: grayscale(50%);
+.image_sold {
+  opacity: 75%;
 }
 
-.grid_pl {
+/***********************************  PRODUCT  ***********************************/
+
+.product {
   display: flex;
   flex-direction: column;
-  gap: var(--gap);
+  gap: var(--gap_medium);
+}
+
+.product_image_container {
+  position: relative;
+}
+
+.product_article {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap_large);
+}
+
+.product_purchase {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap_medium);
+}
+
+.product_size_choice {
+  display: flex;
+  flex-direction: row;
+  align-content: space-between;
+  align-items: center;
+  gap: var(--gap_large);
 }
 
 @media (min-width: 600px) {
-  .grid_pl {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .grid_1-1 {
+  .product {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 5%;
-  }
-
-  .product {
-    gap: 4rem;
-  }
-
-  h1 {
-    font-size: 2rem;
+    gap: var(--gap_medium);
   }
 }
-@media (min-width: 1000px) {
-  .grid_pl {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-  }
 
-  .grid_1-1 {
-    gap: 10%;
-  }
-
-  .grid_1-1-1-1 {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    gap: var(--gap);
-  }
-  .big {
-    grid-column: span 2;
-  }
-  .category p {
-    margin: 50px auto;
-  }
-
-  h1 {
-    font-size: 2.5rem;
-  }
-  p {
-    font-size: 1rem;
-  }
-  .p_sale {
-    font-size: 1.25rem;
-  }
+@media (min-width: 800px) {
 }

@@ -25,18 +25,44 @@
         <div class="max margin">
             <!-- BREADCRUMBS -->
             <div class="luft">
-                <div class="flex_row bc">
-                    <a href="index.html" class="bc_item">Home</a>
-                    <p class="bc_item">/</p>
-                    <a href="kategori.html" class="bc_item">Categories</a>
-                    <p class="bc_item">/</p>
-                    <a href="produktliste.html" class="bc_item">Products</a>
-                </div>
-                <h1>Produktliste</h1>
+                <ul class="breadcrumbs">
+                    <li><a href="index.html" class="bc_item">Home</a></li>
+                    <li><a href="kategori.html" class="bc_item">Categories</a></li>
+                </ul>
             </div>
 
+            <section>
+                <h1>Products</h1>
+                <div class="products_container">
 
-            <!-- CARD - NORMAL -->
+
+                </div>
+            </section>
+        </div>
+    </main>
+    <footer></footer>
+
+    <template class="product_template">
+        <a class="product_card" href="produkt.html">
+
+            <img class="product_image image_sold" src="https://kea-alt-del.dk/t7/images/webp/640/1165.webp" alt="">
+            <div class="product_text">
+                <h2 class="product_name">Blue T20 Indian Cricket Jersey</h2>
+                <h3 class="product_brand">Nike</h3>
+            </div>
+            <p><span class="product_price product_price_sale">299 kr.</span> <span
+                    class="product_price_kr product_price_sale">kr.</span> &#183; <span class="product_price_old">399
+                </span><span class="product_price_old">kr.</span>
+            </p>
+            <p class="product_flag sold">Sold out</p>
+
+        </a>
+    </template>
+    <script src="script.js"></script>
+</body>
+
+</html>
+<!--  
             <div class="grid_pl">
                 <a href="produkt.html">
                     <div class="flex_col card">
@@ -48,10 +74,7 @@
                         <p class="price">299 kr.</p>
                     </div>
                 </a>
-
-
-
-                <!-- CARD - SALE -->
+            
                 <a href="produkt.html">
                     <div class="flex_col card">
                         <img src="https://kea-alt-del.dk/t7/images/webp/640/1165.webp" alt="Product foto">
@@ -69,9 +92,9 @@
                         </div>
                     </div>
                 </a>
-                <a href="produkt.html">
 
-                    <!-- CARD - SALE + SOLD OUT-->
+                <a href="produkt.html">
+            
                     <div class="flex_col card">
                         <img src="https://kea-alt-del.dk/t7/images/webp/640/1573.webp" alt="Product foto" class="sold">
                         <div class="flex_col f_txt">
@@ -88,9 +111,9 @@
                         </div>
                     </div>
                 </a>
-                <a href="produkt.html">
 
-                    <!-- CARD - SOLD OUT-->
+                <a href="produkt.html">
+            
                     <div class="flex_col card">
                         <img src="https://kea-alt-del.dk/t7/images/webp/640/1573.webp" alt="Product foto" class="sold">
                         <div class="flex_col f_txt">
@@ -104,102 +127,5 @@
                             <p>Sold out</p>
                         </div>
                     </div>
-                </a>
-
-                <!-- KOPIER -->
-                <!-- KOPI 0 -->
-                <div class="flex_col card">
-                    <img src="https://kea-alt-del.dk/t7/images/webp/640/1573.webp" alt="Product foto">
-                    <div class="flex_col f_txt">
-                        <p class="p_name">Blue T20 Indian Cricket Jersey</p>
-                        <p class="p_brand">Nike</p>
-                    </div>
-                    <p class="price">299 kr.</p>
-                </div>
-
-
-                <!-- KOPI 1 -->
-
-                <div class="flex_col card">
-                    <img src="https://kea-alt-del.dk/t7/images/webp/640/1573.webp" alt="Product foto">
-                    <div class="flex_col f_txt">
-                        <p class="p_name">Blue T20 Indian Cricket Jersey</p>
-                        <p class="p_brand">Nike</p>
-                    </div>
-                    <div class="flex_row">
-                        <p class="price p_sale">299 kr.</p>
-                        <p>&#183;</p>
-                        <p class="price_old">399 kr.</p>
-                    </div>
-                    <div class="flag sale">
-                        <p>Sale</p>
-                    </div>
-                </div>
-                <div class="flex_col card">
-                    <img src="https://kea-alt-del.dk/t7/images/webp/640/1573.webp" alt="Product foto">
-                    <div class="flex_col f_txt">
-                        <p class="p_name">Blue T20 Indian Cricket Jersey</p>
-                        <p class="p_brand">Nike</p>
-                    </div>
-                    <p class="price">299 kr.</p>
-                </div>
-
-
-                <!-- KOPI 2 -->
-
-                <div class="flex_col card">
-                    <img src="https://kea-alt-del.dk/t7/images/webp/640/1573.webp" alt="Product foto">
-                    <div class="flex_col f_txt">
-                        <p class="p_name">Blue T20 Indian Cricket Jersey</p>
-                        <p class="p_brand">Nike</p>
-                    </div>
-                    <div class="flex_row">
-                        <p class="price p_sale">299 kr.</p>
-                        <p>&#183;</p>
-                        <p class="price_old">399 kr.</p>
-                    </div>
-                    <div class="flag sale">
-                        <p>Sale</p>
-                    </div>
-                </div>
-                <div class="flex_col card">
-                    <img src="https://kea-alt-del.dk/t7/images/webp/640/1573.webp" alt="Product foto">
-                    <div class="flex_col f_txt">
-                        <p class="p_name">Blue T20 Indian Cricket Jersey</p>
-                        <p class="p_brand">Nike</p>
-                    </div>
-                    <p class="price">299 kr.</p>
-                </div>
-
-
-                <!-- KOPI 3 -->
-
-                <div class="flex_col card">
-                    <img src="https://kea-alt-del.dk/t7/images/webp/640/1573.webp" alt="Product foto">
-                    <div class="flex_col f_txt">
-                        <p class="p_name">Blue T20 Indian Cricket Jersey</p>
-                        <p class="p_brand">Nike</p>
-                    </div>
-                    <div class="flex_row">
-                        <p class="price p_sale">299 kr.</p>
-                        <p>&#183;</p>
-                        <p class="price_old">399 kr.</p>
-                    </div>
-                    <div class="flag sale">
-                        <p>Sale</p>
-                    </div>
-                </div>
-
-
-            </div>
-
-
-
-
-        </div>
-    </main>
-    <footer></footer>
-    <script src="script.js"></script>
-</body>
-
-</html>
+                </a> 
+-->

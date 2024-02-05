@@ -25,41 +25,37 @@
         <div class="max">
             <!-- BREADCRUMBS -->
             <div class="luft">
-                <div class="flex_row bc">
-                    <a href="index.html" class="bc_item">Home</a>
-                    <p class="bc_item">/</p>
-                    <a href="kategori.html" class="bc_item">Categories</a>
-                    <p class="bc_item">/</p>
-                    <a href="produktliste.html" class="bc_item">Products</a>
-                    <p class="bc_item">/</p>
-                    <a href="#" class="bc_item">Product name</a>
-                </div>
+                <ul class="breadcrumbs">
+                    <li><a href="index.html" class="bc_item">Home</a></li>
+                    <li><a href="kategori.html" class="bc_item">Categories</a></li>
+                    <li><a href="produktliste.html" class="bc_item">Products</a></li>
+                </ul>
                 <h1>Category</h1>
             </div>
 
-
-            <div class="grid_1-1">
-                <div class="relative product">
-                    <img src="https://kea-alt-del.dk/t7/images/webp/640/1165.webp" alt="Product foto">
-                    <div class="flag sale">
+            <section class="product">
+                <div class="product_image_container">
+                    <img class="product_image" src="https://kea-alt-del.dk/t7/images/webp/640/1165.webp"
+                        alt="Product foto">
+                    <div class="product_flag sale">
                         <p>Sale</p>
                     </div>
                 </div>
-                <div>
-                    <div class="flex_col product">
-                        <div class="f_txt">
+
+                <div class="grid_product">
+                    <article class="product_article">
+                        <div class="product_text">
                             <p class="p_brand">Nike</p>
-                            <h1 class="p_name">Blue T20 Indian Cricket Jersey</h1>
+                            <h2 class="p_name">Blue T20 Indian Cricket Jersey</h2>
                         </div>
+                        <p><span class="product_price product_price_sale">299 kr.</span> <span
+                                class="product_price_kr product_price_sale">kr.</span> &#183; <span
+                                class="product_price_old">399
+                            </span><span class="product_price_old">kr.</span>
+                        </p>
 
-                        <div class="flex_row">
-                            <p class="price p_sale">299 kr.</p>
-                            <p>&#183;</p>
-                            <p class="price_old">399 kr.</p>
-                        </div>
-
-                        <div class="flex_col">
-                            <div class="flex_row">
+                        <div class="product_purchase">
+                            <div class="product_size_choice">
                                 <p>Choose a size</p>
                                 <select name="size">
                                     <option value="xs">XS</option>
@@ -72,18 +68,15 @@
                             <a href="#" class="buy">Add to basket</a>
                         </div>
 
-                        <div class="flex_col">
+                        <div class="product_text">
                             <h2>Description</h2>
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta dolor officia fuga iusto
                                 molestias esse, cumque atque inventore eaque quisquam tempore corporis quae aut.
                                 Doloremque odio necessitatibus hic soluta voluptatibus!</p>
                         </div>
-                    </div>
-
-
-
+                    </article>
                 </div>
-            </div>
+            </section>
         </div>
     </main>
     <footer></footer>
