@@ -115,6 +115,14 @@ select {
 
 /***********************************  BREADCRUMBS  ***********************************/
 
+.max {
+  margin: 0 10%;
+}
+
+.luft {
+  margin: 0 0 2rem;
+}
+
 .breadcrumbs {
   display: flex;
   gap: var(--gap_medium);
@@ -128,6 +136,11 @@ select {
 }
 
 /***********************************  CATEGORY  ***********************************/
+.categories {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap_medium);
+}
 
 .category {
   background: linear-gradient(170deg, rgba(217, 35, 35, 0.75) 0%, rgba(255, 153, 0, 0.75) 80%);
@@ -276,6 +289,15 @@ select {
 }
 
 @media (min-width: 800px) {
+  .categories {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .big {
+    grid-column: span 2;
+  }
+
   .product {
     gap: var(--gap_large);
   }
