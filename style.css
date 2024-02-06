@@ -7,7 +7,7 @@ html {
   --radius_large: 15px;
   --gap_small: 0.5rem;
   --gap_medium: 1rem;
-  --gap_large: 1.5rem;
+  --gap_large: 3.5rem;
 
   --dark: #000000;
   --light: #ffffff;
@@ -31,6 +31,7 @@ html {
 body {
   margin: 0 auto;
   max-width: 1500px;
+  padding: 5%;
 }
 
 img {
@@ -52,6 +53,19 @@ h2 {
   font-size: 1.25rem;
   font-weight: 600;
   color: var(--dark);
+}
+h3 {
+  font-family: var(--font);
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--dark);
+}
+h4 {
+  font-family: var(--font);
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--dark);
+  margin: 1rem 0 0;
 }
 
 p {
@@ -90,15 +104,6 @@ a.buy {
 }
 
 /***********************************  SELECT  ***********************************/
-.max {
-  margin: 0 10%;
-}
-
-.luft {
-  margin: 0 0 2rem;
-}
-
-/***********************************  SELECT  ***********************************/
 select {
   border: none;
   border-radius: var(--radius_medium);
@@ -106,21 +111,6 @@ select {
   padding: 10px 10px;
   font-size: 1rem;
   width: 50%;
-}
-
-/***********************************  FLEX  ***********************************/
-
-.flex_row {
-  display: flex;
-  flex-direction: row;
-  gap: var(--gap_medium);
-  align-items: center;
-}
-
-.flex_col {
-  display: flex;
-  flex-direction: column;
-  gap: var(--gap_medium);
 }
 
 /***********************************  BREADCRUMBS  ***********************************/
@@ -181,7 +171,6 @@ select {
 
 .product_name {
   font-weight: 600;
-  font-size: 1.4rem;
 }
 
 .product_brand {
@@ -233,6 +222,7 @@ select {
   display: flex;
   flex-direction: column;
   gap: var(--gap_medium);
+  margin: 30px auto;
 }
 
 .product_image_container {
@@ -242,7 +232,13 @@ select {
 .product_article {
   display: flex;
   flex-direction: column;
-  gap: var(--gap_large);
+  gap: var(--gap_medium);
+}
+
+.product_header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap_small);
 }
 
 .product_purchase {
@@ -259,13 +255,58 @@ select {
   gap: var(--gap_large);
 }
 
+.product_text {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap_small);
+}
+
 @media (min-width: 600px) {
   .product {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: var(--gap_medium);
   }
+  .product_header h2 {
+    font-size: 1.75rem;
+  }
+  .product_header .product_brand {
+    font-size: 1.25rem;
+  }
 }
 
 @media (min-width: 800px) {
+  .product {
+    gap: var(--gap_large);
+  }
+
+  .product_article {
+    gap: var(--gap_large);
+  }
+  .product_header h2 {
+    font-size: 2rem;
+  }
+
+  .product_header .product_brand {
+    font-size: 1.5rem;
+  }
+
+  h1 {
+    font-size: 3rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  h3 {
+    font-size: 1.25rem;
+  }
+  h4 {
+    font-size: 1.15rem;
+  }
+
+  p {
+    font-size: 1rem;
+  }
 }
