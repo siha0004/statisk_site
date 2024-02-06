@@ -30,10 +30,19 @@ function showproducts(productJSON) {
   let productClone;
 
   productJSON.forEach((product) => {
-    console.log("product", product);
+    // console.log("product", product);
+
     productClone = productTemplate.cloneNode(true).content;
     productClone.querySelector(".product_image").src = `https://kea-alt-del.dk/t7/images/webp/640/${product.id}.webp`;
     productClone.querySelector(".product_image").alt = `Picture of a ${product.name}`;
+
+    if (product.soldout) {
+      console.log("product.soldout", product.soldout);
+      productClone.querySelector(".product_image").classList.remove("image_sold");
+      productClone.querySelector(".product_flag").classList.remove("sold");
+      productClone.querySelector(".product_flag").textContent = "";
+    }
+
     productClone.querySelector(".product_name").textContent = product.productdisplayname;
     productClone.querySelector(".product_brand").textContent = product.brandname;
     productClone.querySelector(".product_price").textContent = product.price;
