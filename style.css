@@ -136,7 +136,7 @@ select {
 }
 
 /***********************************  CATEGORY  ***********************************/
-.categories {
+.category_container {
   display: flex;
   flex-direction: column;
   gap: var(--gap_medium);
