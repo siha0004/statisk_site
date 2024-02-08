@@ -13,7 +13,7 @@ html {
   --light: #ffffff;
   --grey_1: #f1f1f1;
   --grey_2: #808080;
-  --grey_3: #dfdfdf;
+  --grey_3: #bababa;
   --grey_4: #e6e6e6;
   --sold: #dfdfdf80;
   --sale: #ff3d00;
@@ -226,7 +226,7 @@ select {
   background-color: var(--grey_3);
 }
 .image_sold {
-  opacity: 75%;
+  opacity: 50%;
 }
 
 /***********************************  PRODUCT  ***********************************/
