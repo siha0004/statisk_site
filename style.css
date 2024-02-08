@@ -197,7 +197,8 @@ select {
   font-size: 1.2rem;
 }
 
-.product_price_old {
+.product_price_old,
+.product_price_old_kr {
   text-decoration: line-through;
 }
 
