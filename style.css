@@ -202,6 +202,10 @@ select {
   text-decoration: line-through;
 }
 
+.hide {
+  display: none;
+}
+
 .product_price_sale {
   color: var(--sale);
 }

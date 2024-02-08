@@ -36,25 +36,38 @@ function showproducts(productJSON) {
     productClone = productTemplate.cloneNode(true).content;
     productClone.querySelector(".product_image").src = `https://kea-alt-del.dk/t7/images/webp/640/${product.id}.webp`;
     productClone.querySelector(".product_image").alt = `Picture of a ${product.name}`;
+    productClone.querySelector(".product_price").textContent = product.price;
 
     if (product.discount) {
       console.log("product.discount", product.discount);
       productClone.querySelector(".product_flag").classList.add("sale");
       productClone.querySelector(".product_flag").textContent = `- ${product.discount}%`;
+
+      let discountPrice;
+
+      discountNum = product.price * (product.discount / 100);
+      discountPrice = product.price - discountNum;
+
+      productClone.querySelector(".product_price").textContent = discountPrice;
+      productClone.querySelector(".product_price_old").textContent = product.price;
+    } else {
+      productClone.querySelector(".product_price").classList.remove("product_price_sale");
+      productClone.querySelector(".product_price_kr").classList.remove("product_price_sale");
+      productClone.querySelector(".dot").classList.add("hide");
+      productClone.querySelector(".product_price_old").classList.add("hide");
+      productClone.querySelector(".product_price_old_kr").classList.add("hide");
     }
 
     if (product.soldout) {
       console.log("product.soldout", product.soldout);
       productClone.querySelector(".product_image").classList.add("image_sold");
+      // productClone.querySelector(".product_flag").classList.remove("sale");
       productClone.querySelector(".product_flag").classList.add("sold");
       productClone.querySelector(".product_flag").textContent = "Sold out";
     }
 
     productClone.querySelector(".product_name").textContent = product.productdisplayname;
     productClone.querySelector(".product_brand").textContent = product.brandname;
-    productClone.querySelector(".product_price").textContent = product.price;
-    // productClone.querySelector(".product_price_sale").textContent = product.description;
-    // productClone.querySelector(".product_price_old").textContent = product.description;
 
     productClone.querySelector(".product_card").href = `produkt.html?id=${product.id}`;
 

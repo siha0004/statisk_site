@@ -16,4 +16,31 @@ function showProduct(product) {
   document.querySelector(".product_price").textContent = product.price;
   document.querySelector(".product_description").innerHTML = product.description;
   document.querySelector(".product_material").innerHTML = product.materialcaredesc;
+
+  if (product.discount) {
+    console.log("product.discount", product.discount);
+    document.querySelector(".product_flag").classList.remove("sold");
+    document.querySelector(".product_flag").classList.add("sale");
+    document.querySelector(".product_flag").textContent = `- ${product.discount}%`;
+
+    let discountPrice;
+    discountNum = product.price * (product.discount / 100);
+    discountPrice = product.price - discountNum;
+
+    document.querySelector(".product_price").textContent = discountPrice;
+    document.querySelector(".product_price_old").textContent = product.price;
+  } else {
+    document.querySelector(".product_price").classList.remove("product_price_sale");
+    document.querySelector(".product_price_kr").classList.remove("product_price_sale");
+    document.querySelector(".dot").classList.add("hide");
+    document.querySelector(".product_price_old").classList.add("hide");
+    document.querySelector(".product_price_old_kr").classList.add("hide");
+  }
+
+  if (product.soldout) {
+    console.log("product.soldout", product.soldout);
+    document.querySelector(".product_image").classList.add("image_sold");
+    document.querySelector(".product_flag").classList.add("sold");
+    document.querySelector(".product_flag").textContent = "Sold out";
+  }
 }
