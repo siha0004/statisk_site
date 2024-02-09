@@ -303,9 +303,9 @@ header {
 }
 
 @media (min-width: 800px) {
-  .categories {
+  .category_container {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
 
   .big {
