@@ -40,6 +40,10 @@ img {
   display: block;
 }
 
+.logo {
+  height: 4rem;
+}
+
 /***********************************  TEXT  ***********************************/
 
 h1 {
@@ -47,6 +51,7 @@ h1 {
   font-size: 2rem;
   font-weight: 600;
   color: var(--dark);
+  margin-bottom: 2rem;
 }
 h2 {
   font-family: var(--font);
@@ -113,6 +118,10 @@ select {
   width: 50%;
 }
 
+/***********************************  HEADER  ***********************************/
+header {
+  margin: 1rem 0 3rem;
+}
 /***********************************  BREADCRUMBS  ***********************************/
 
 .max {
