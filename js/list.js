@@ -48,8 +48,8 @@ function showproducts(productJSON) {
       discountNum = product.price * (product.discount / 100);
       discountPrice = product.price - discountNum;
 
-      productClone.querySelector(".product_price").textContent = discountPrice;
-      productClone.querySelector(".product_price_old").textContent = product.price;
+      productClone.querySelector(".product_price").textContent = discountPrice.toFixed(2);
+      productClone.querySelector(".product_price_old").textContent = product.price.toFixed(2);
     } else {
       productClone.querySelector(".product_price").classList.remove("product_price_sale");
       productClone.querySelector(".product_price_kr").classList.remove("product_price_sale");

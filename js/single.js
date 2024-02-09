@@ -27,8 +27,8 @@ function showProduct(product) {
     discountNum = product.price * (product.discount / 100);
     discountPrice = product.price - discountNum;
 
-    document.querySelector(".product_price").textContent = discountPrice;
-    document.querySelector(".product_price_old").textContent = product.price;
+    document.querySelector(".product_price").textContent = discountPrice.toFixed(2);
+    document.querySelector(".product_price_old").textContent = product.price.toFixed(2);
   } else {
     document.querySelector(".product_price").classList.remove("product_price_sale");
     document.querySelector(".product_price_kr").classList.remove("product_price_sale");
